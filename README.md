@@ -34,3 +34,11 @@ It will run flask app on port `5000` on `localhost` or `127.0.0.1`
 Open browser and hit `http://127.0.0.1:5000/`
 
 
+docker pull python:3.8-alpine
+docker images
+
+docker build -t rahulmr/rknecdemo:v1 .
+
+docker run -it --name flaskdemo -p 8090:5000 -d rahulmr/rknecdemo:v2 
+
+
