@@ -40,7 +40,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'Deploying the flask application'
+                echo 'Deploying the flask test application'
                 sh "docker run -itd -p 8070:5000 --name=flaskdemo flaskapp:${env.BUILD_ID}"
                 sh 'docker ps -a'
             }
