@@ -34,3 +34,27 @@ It will run flask app on port `5000` on `localhost` or `127.0.0.1`
 Open browser and hit `http://127.0.0.1:5000/`
 
 
+python -V
+pip -V
+pip install virtualenv --user
+python -m pip install --upgrade pip
+docker version
+python -m virtualenv venv
+source ./venv/bin/activate
+pip install -r requirements.txt
+python ./create_table.py
+python ./app.py
+docker pull nginx
+docker image ls
+docker run -it --rm --name web -p 8080:80 -d nginx
+docker ps
+docker container ls
+CONTAINER ID   IMAGE     COMMAND CREATED  STATUS                    PORTS                                                                  NAMES
+9b445d8770c5   nginx     "/docker-entrypoint.…"   48 seconds ago   Up 46 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   web
+
+docker container ls -a
+docker container stop web
+docker container stop 9b445d8770c5
+
+docker run -it --name web -p 8080:80 -d nginx
+
